@@ -1,58 +1,88 @@
-
-import HeroSection from "../Components/HomePage/HeroSection";
 import FindProgress from "../Components/HomePage/FindProgress";
 import GenerateTraffic from "../Components/HomePage/GenerateTraffic";
+import HeroSection from "../Components/HomePage/HeroSection";
 import StatusCard from "../Components/HomePage/StatusCard";
-import PricingPlans from "../Components/HomePage/PricingPlans";
+// import PricingPlans from "../Components/HomePage/PricingPlans";
 import WhyChooseUs from "../Components/HomePage/WhyChooseUs";
-import Testimonials from "../Components/HomePage/Testimonials";
+// import Testimonials from "../Components/HomePage/Testimonials";
 import ContactUs from "../Components/HomePage/ContactUs";
-import LatestNewsAndBlogs from "../Components/HomePage/LatestNewsAndBlogs";
-import Compines from "../Components/HomePage/Compines";
+// import LatestNewsAndBlogs from "../Components/HomePage/LatestNewsAndBlogs";
+import Compines from "../Components/HomePage/Companies";
 import Services from "../Components/HomePage/Services";
+import EnquiryForm from "../Components/HomePage/EnquiryForm";
+
 import { Helmet } from "react-helmet";
 
-
 function HomePage() {
-
-
   const stats = [
-    { title: "Business Ideas", icon: "Business-Ideas-logo.png", count: 0 },
-    { title: "Media Posts", icon: "Media-Posts-logo.png", count: 0 },
-    { title: "Happy Customers", icon: "Happy-Customers-logo.png", count: 0 },
+    { title: "Business Ideas", icon: "Business-Ideas-logo.png", count: 200 },
+    { title: "Media Posts", icon: "Media-Posts-logo.png", count: 300 },
+    { title: "Happy Customers", icon: "Happy-Customers-logo.png", count: 700 },
     {
       title: "Finished Projects",
       icon: "Finished-Projects-logo.png",
-      count: 0,
+      count: 1000,
     },
   ];
 
-
-
   return (
     <div className="">
-   
       <Helmet>
-        <title>Welcome to My Awesome Company</title>
-        <meta name="description" content="Discover the amazing products and services offered by My Awesome Company. We are committed to excellence and customer satisfaction." />
-        <meta name="keywords" content="home, awesome company, products, services" />
-        <meta property="og:title" content="Welcome to My Awesome Company" />
-        <meta property="og:description" content="Discover the amazing products and services offered by My Awesome Company. We are committed to excellence and customer satisfaction." />
+        <title>Branding Solutions</title>
+        <meta
+          name="description"
+          content="Discover the amazing products and services offered by Welcome to Branding Solutions. We are committed to excellence and customer satisfaction."
+        />
+        <meta
+          name="keywords"
+          content="Website Designing ,
+Web Designing ,
+Web Designing in Jalandhar, 
+Web Designing in Ludhiana ,
+Web Designing in Chandigarh, 
+Web Designing in Amritsar ,
+Web Designing in Bathinda,
+Web Designing in Moga,
+Best web designing ,
+Web Designing in Punjab,Facebook Ads in Jalandhar ,
+Facebook Ads in Ludhiana,
+Facebook Ads in Punjab"
+        />
+        <meta property="og:title" content="Welcome to Branding Solutions" />
+        <meta
+          property="og:description"
+          content="Discover the amazing products and services offered by Welcome to Branding Solutions. We are committed to excellence and customer satisfaction."
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://www.myawesomecompany.com" />
-        <meta property="og:image" content="http://www.myawesomecompany.com/home-image.jpg" />
+        <meta property="og:url" content="http://www.brandingsolutions.in" />
+        <meta
+          property="og:image"
+          content="http://www.myawesomecompany.com/home-image.jpg"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@myawesomecompany" />
-        <meta name="twitter:title" content="Welcome to My Awesome Company" />
-        <meta name="twitter:description" content="Discover the amazing products and services offered by My Awesome Company. We are committed to excellence and customer satisfaction." />
-        <meta name="twitter:image" content="http://www.myawesomecompany.com/home-image.jpg" />
+        <meta name="twitter:title" content="Welcome to Branding Solutions" />
+        <meta
+          name="twitter:description"
+          content="Discover the amazing products and services offered by Welcome to Branding Solutions. We are committed to excellence and customer satisfaction."
+        />
+        <meta
+          name="twitter:image"
+          content="http://www.myawesomecompany.com/home-image.jpg"
+        />
         <link rel="canonical" href="http://www.myawesomecompany.com" />
       </Helmet>
-      
       <HeroSection />
-      <Compines/>
-      <Services/>
-      
+
+      <div className="flex justify-center items-center h-full">
+        <div className="w-2/5 h-full">
+          <h2 className="text-2xl font-bold mb-4 text-center">Enquiry Form</h2>
+          <EnquiryForm/>
+        </div>
+      </div>
+      <Compines />
+      <Services />
+
       <FindProgress />
       <GenerateTraffic />
       <section className=" bg-[#EBF1F3] w-full  ">
@@ -69,17 +99,16 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <WhyChooseUs/>
-      <section className="bg-[#EBF1F3] w-full">
-        <div className="max-w-screen-xl mx-auto "> 
-            <PricingPlans/>
+      <WhyChooseUs />
+      {/* <section className="bg-[#EBF1F3] w-full">
+        <div className="max-w-screen-xl mx-auto ">
+          <PricingPlans />
         </div>
-
       </section>
-      <Testimonials/>
-      <ContactUs/>
-      <LatestNewsAndBlogs/>
-    
+      <Testimonials />
+      
+      <LatestNewsAndBlogs /> */}
+      <ContactUs />
     </div>
   );
 }

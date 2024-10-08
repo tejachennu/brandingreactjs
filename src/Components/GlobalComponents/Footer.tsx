@@ -1,12 +1,16 @@
-import React from 'react';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaPhone ,FaRegSquare } from 'react-icons/fa';
+import React from "react";
+
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaPhone,
+  FaRegSquare,
+} from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
-import { FaLocationArrow } from "react-icons/fa6";
+// import { FaLocationArrow } from "react-icons/fa6";
 import useIntract from "../GlobalComponents/useIntract";
-
-
-
 
 interface SocialMediaLink {
   href: string;
@@ -33,90 +37,156 @@ interface FooterData {
 }
 
 const footerData: FooterData = {
-  logo: 'header-logo.png',
-  description: 'Qorem ipsum dolor sit amet, consectetur adipiscing elit aut elit tellus luctus nec ullamcorper mattis aulvinar daibus leo.',
+  logo: "BS-logo.png",
+  description:
+    "At Branding Solutions, we are dedicated to elevating your brand's identity and visibility in the digital landscape. With a team of creative experts and industry veterans, we offer comprehensive branding services including logo design, website development, digital marketing, and SEO.",
   socialMedia: [
-    { href: '#', icon: <FaFacebookF />, label: 'Facebook' },
-    { href: '#', icon: <FaTwitter />, label: 'Twitter' },
-    { href: '#', icon: <FaLinkedinIn />, label: 'LinkedIn' },
+    { href: "#", icon: <FaFacebookF />, label: "Facebook" },
+    { href: "#", icon: <FaTwitter />, label: "Twitter" },
+    { href: "#", icon: <FaLinkedinIn />, label: "LinkedIn" },
   ],
   links: [
-    { href: '#', text: 'Home' },
-    { href: '#', text: 'About' },
-    { href: '#', text: 'Services' },
-    { href: '#', text: 'Projects' },
-    { href: '#', text: 'Contact Us' },
+    { href: "#", text: "Home" },
+    { href: "#", text: "About" },
+    { href: "#", text: "Services" },
+    { href: "#", text: "Projects" },
+    { href: "#", text: "Contact Us" },
   ],
   contact: {
-    phone: '+61 3 8376 6284',
-    email: 'Info@Keywordly.com',
-    address: '121 King Street, Melbourne Victoria 3000 Australia',
+    phone: "+91-90563-53599",
+    email: "info@brandingsolutions.in",
+    address:
+      "56 Green Wood Avenue, Lane number 3, Near Krishna Mandir, Kuki Dhab, Jalandhar",
   },
-  copyright: 'Copyright © 2024 Keywordly All rights reserved.',
+  copyright: "Copyright © 2024 branding  All rights reserved.",
 };
 
 const Footer: React.FC = () => {
   const { ref, isVisible } = useIntract();
   return (
     <footer className="py-8 bg-[#EBF1F3]" ref={ref}>
+    
       <div className="max-w-screen-xl p-4 mx-auto sm:p-6 lg:p-8">
-        <div className="flex justify-center md:justify-start">
-              <img src={`/${footerData.logo}`} loading="lazy" alt="Keywordly" className="h-10 " />
-            </div>
+        {/* <div className="flex justify-center md:justify-start">
+          <img
+            src={`/${footerData.logo}`}
+            loading="lazy"
+            alt="branding"
+            className="h-10 "
+          />
+        </div> */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="text-center md:text-left">
-            
-            <p className="mt-4 text-sm text-gray-600 md:text-base lg:text-lg">{footerData.description}</p>
-            <div className="flex justify-center mt-4 space-x-4 md:justify-start">
+            <img
+              src={`/${footerData.logo}`}
+              loading="lazy"
+              alt="branding"
+              className="h-10 width-full"
+            />
+            <p className="text-sm text-gray-600 md:text-base lg:text-lg pt-6 ">
+              {footerData.description}
+            </p>
+            {/* <div className="flex justify-center mt-4 space-x-4 md:justify-start">
               {footerData.socialMedia.map((social, index) => (
-                <a key={index} href={social.href} className="p-3 text-xl text-black border-2 border-black hover:text-white hover:bg-orange-600 hover:border-none" aria-label={social.label}>
+                <a
+                  key={index}
+                  href={social.href}
+                  className="p-3 text-xl text-black border-2 border-black hover:text-white hover:bg-orange-600 hover:border-none"
+                  aria-label={social.label}
+                >
                   {social.icon}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <div className="flex gap-4 text-center md:text-left max-lg:block">
             <ul className="w-full mb-4 space-y-2">
               {footerData.links.map((link, index) => (
-                <li key={index} className='list-none '>
-<a href={link.href} className="flex items-center text-sm text-gray-600 list-none md:text-base lg:text-lg hover:text-orange-600">
-  <FaRegSquare className='mr-2 text-xs text-orange-600 ' />
-  {link.text}
-</a>                </li>
+                <li key={index} className="list-none ">
+                  <a
+                    href={link.href}
+                    className="flex items-center text-sm text-gray-600 list-none md:text-base lg:text-lg hover:text-orange-600"
+                  >
+                    <FaRegSquare className="mr-2 text-xs text-orange-600 " />
+                    {link.text}
+                  </a>{" "}
+                </li>
               ))}
             </ul>
-            <div className=''>
-            <div className="flex items-center justify-start mb-1"><div><FaPhone className="block mr-2 text-orange-600" /></div> <p className="text-sm text-gray-600 md:text-base lg:text-lg ">{footerData.contact.phone}</p></div>
-            <div className="flex items-center justify-start mb-1"> <div><IoMail className="block mr-2 text-orange-600" /> </div><p className="text-sm text-gray-600 md:text-base lg:text-lg "> {footerData.contact.email}</p></div>
-            <div className="flex items-start justify-start mb-1"><div><FaLocationDot className="block w-4 text-orange-600" /> </div><p className="text-sm text-left text-gray-600 md:text-base lg:text-lg "> {footerData.contact.address}</p></div>
-            
+            <div className="">
+              <div className="flex items-center justify-start mb-1">
+                <div>
+                  <FaPhone className="block mr-2 text-orange-600" />
+                </div>{" "}
+                <p className="text-sm text-gray-600 md:text-base lg:text-lg ">
+                  {footerData.contact.phone}
+                </p>
+              </div>
+              <div className="flex items-center justify-start mb-1">
+                {" "}
+                <div>
+                  <IoMail className="block mr-2 text-orange-600" />{" "}
+                </div>
+                <p className="text-sm text-gray-600 md:text-base lg:text-lg ">
+                  {" "}
+                  {footerData.contact.email}
+                </p>
+              </div>
+              <div className="flex items-start justify-start mb-1">
+                <div>
+                  <FaLocationDot className="block w-4 text-orange-600" />{" "}
+                </div>
+                <p className="text-sm text-left text-gray-600 md:text-base lg:text-lg ">
+                  {" "}
+                  {footerData.contact.address}
+                </p>
+              </div>
             </div>
           </div>
 
           <div className="text-center md:text-left">
             <div className="mt-4">
-              <form className="flex">
-                <input type="email" placeholder="Enter Email" className="w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:border-orange-500" />
-                <button type="submit" className="px-4 py-2 text-white bg-orange-500 hover:bg-orange-600">
-                  <span role="img" aria-label="send"><FaLocationArrow className='text-white ' /></span>
+              {/* <form className="flex">
+                <input
+                  type="email"
+                  placeholder="Enter Email"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:border-orange-500"
+                />
+                <button
+                  type="submit"
+                  className="px-4 py-2 text-white bg-orange-500 hover:bg-orange-600"
+                >
+                  <span role="img" aria-label="send">
+                    <FaLocationArrow className="text-white " />
+                  </span>
                 </button>
-              </form>
+              </form> */}
               <div className="mt-2 text-left ">
-                <label className="flex text-sm text-gray-600 md:text-base lg:text-lg">
-                <FaRegSquare className='mt-1 mr-2 text-xs text-orange-600 ' />
-                  <p>Quis autem vel eum iure reprehenderit qui in ea voluptate esse.</p>
-                </label>
+                {/* <label className="flex text-sm text-gray-600 md:text-base lg:text-lg">
+                  <FaRegSquare className="mt-1 mr-2 text-xs text-orange-600 " />
+                  <p>Sign up for emails</p>
+                </label> */}
+                <iframe
+                  title={"Google Maps"}
+                  id="map-canvas"
+                  className=""
+                  width="100%"
+                  height="100%"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3409.7049800394416!2d75.56941737560214!3d31.28425477432292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDE3JzAzLjMiTiA3NcKwMzQnMTkuMiJF!5e0!3m2!1sen!2sin!4v1721834089968!5m2!1sen!2sin"
+                ></iframe>
               </div>
             </div>
           </div>
         </div>
         <div className="mt-8 text-sm text-center border-t-2 md:text-base lg:text-lg">
-          <p className={`mt-4 ${isVisible ? 'animate-fadeUp ' : '  '} `}>{footerData.copyright}</p>
+          <p className={`mt-4 ${isVisible ? "animate-fadeUp " : "  "} `}>
+            {footerData.copyright}
+          </p>
         </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
